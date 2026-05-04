@@ -1,0 +1,3 @@
+## 2025-05-15 - [HeroTerminal Optimization]
+**Learning:** Found that high-frequency state updates for typing animations in `HeroTerminal` were causing the entire hero section (including static text and buttons) to re-render every 100ms. Additionally, using React state for a simple blinking cursor is an anti-pattern when CSS animations can handle it more efficiently.
+**Action:** Isolate high-frequency animation state into specialized, memoized sub-components. Replace state-based periodic visual effects (like blinking cursors) with CSS @keyframes to reduce main thread activity and React reconciliation overhead.
