@@ -1,0 +1,3 @@
+## 2025-05-15 - [HeroTerminal Optimization]
+**Learning:** High-frequency state updates (like typing animations) in React can cause expensive parent tree re-renders. Moving the animation logic into a memoized sub-component isolates the performance cost. Additionally, replacing JavaScript-driven animations (like a blinking cursor) with CSS-based animations reduces main thread activity and eliminates redundant React state updates.
+**Action:** Always check for high-frequency state updates and isolate them into `React.memo` components. Prefer CSS animations (@keyframes) over `setInterval` + `useState` for permanent visual effects.
