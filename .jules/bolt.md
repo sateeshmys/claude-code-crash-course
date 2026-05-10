@@ -1,0 +1,3 @@
+## 2026-05-10 - High-frequency re-renders in HeroTerminal
+**Learning:** The `HeroTerminal` component uses `useState` and `setInterval` to drive a typing animation and a blinking cursor. This causes the entire `HeroTerminal` component tree (including complex SVGs and static text) to re-render every 100ms and 530ms respectively. In React, these unnecessary re-renders of static content can be avoided by isolating volatile state in memoized sub-components or using CSS for purely visual effects like blinking.
+**Action:** Replace React-driven blinking cursors with CSS animations. Move high-frequency state updates (like typing animations) into isolated, memoized sub-components to prevent parent tree re-renders.
