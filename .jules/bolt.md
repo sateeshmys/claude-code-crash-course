@@ -1,0 +1,3 @@
+## 2025-05-22 - Optimizing High-Frequency Terminal Animations
+**Learning:** Top-level state updates in complex components (like a Hero section with SVGs or complex layouts) triggered by timers (e.g., 100ms typing, 530ms cursor) cause expensive full-tree re-renders. Isolating these into memoized sub-components and using CSS animations for repetitive visual states significantly reduces main thread activity.
+**Action:** Always move high-frequency state (typing animations, countdowns) into the smallest possible memoized component. Use CSS `@keyframes` for simple toggles (like cursors) instead of `setInterval` + `useState`.
