@@ -1,0 +1,3 @@
+## 2026-05-28 - Isolated Re-renders in HeroTerminal
+**Learning:** The 'HeroTerminal' component was a significant bottleneck because top-level state updates (every 100ms for typing, 530ms for cursor) triggered full re-renders of the entire Hero section, including complex SVG backgrounds and static content. Isolating the high-frequency state into a memoized sub-component ('TypingCommand') and offloading the cursor blink to CSS animations reduces the parent component re-renders to near-zero.
+**Action:** Always identify high-frequency state updates in complex components and isolate them into dedicated, memoized sub-components or CSS-based solutions to prevent cascading re-renders.
