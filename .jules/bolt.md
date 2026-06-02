@@ -1,0 +1,3 @@
+## 2026-06-02 - [Isolating high-frequency state updates]
+**Learning:** High-frequency state updates (like typing animations or custom cursors) in a complex parent component trigger full re-renders of all children, including heavy static elements like SVG patterns or background grids. React.memo on the parent doesn't help if the state is local to it.
+**Action:** Move high-frequency state into a specialized memoized sub-component and replace state-driven visual changes with CSS animations where possible (e.g., blinking cursors). This isolates the re-render scope and reduces CPU usage significantly.
