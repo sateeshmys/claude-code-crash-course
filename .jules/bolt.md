@@ -1,0 +1,3 @@
+## 2026-05-20 - [Isolating high-frequency state updates in HeroTerminal]
+**Learning:** High-frequency state updates (like typing animations every 100ms or cursor blinking) in a complex parent component can cause massive performance degradation due to unnecessary re-renders of static or complex sibling elements (like SVGs or large text blocks). Isolating this "noisy" state into a memoized sub-component and leveraging CSS animations for visual-only updates (like cursors) significantly reduces the rendering load.
+**Action:** Always check for high-frequency `setInterval` or `setTimeout` hooks and consider moving them into isolated sub-components or replacing them with CSS animations where possible.
