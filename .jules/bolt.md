@@ -1,0 +1,3 @@
+## 2026-06-16 - Isolated High-Frequency Re-renders in Hero components
+**Learning:** High-frequency state updates (100ms typing, 530ms cursor) in a top-level Client Component trigger full re-renders of all children, including complex SVG paths and static text. This was particularly visible in the `HeroTerminal` component where the entire hero section was re-rendering on every character typed.
+**Action:** Isolate high-frequency visual states into small, memoized sub-components and replace periodic state-driven transitions (like cursor blinking) with pure CSS animations to keep the main component tree stable.
