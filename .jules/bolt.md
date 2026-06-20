@@ -1,0 +1,3 @@
+## 2025-12-25 - HeroTerminal Re-render Optimization
+**Learning:** High-frequency visual states like typing effects and blinking cursors in React Client Components can cause massive reconciliation overhead (e.g., 10 renders/sec) if the state is hosted in a top-level component containing complex static content (SVG, grids). Moving simple visual cycles (like blinking) to pure CSS animations and isolating text-typing state into memoized sub-components can reduce re-renders by over 95% while maintaining visual fidelity.
+**Action:** Always audit Client Components using `setInterval` or `setTimeout` for opportunities to move state down into leaf components or offload to CSS `@keyframes`. Use Playwright with console log piping to quantify render reductions during verification.
