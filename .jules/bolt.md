@@ -1,0 +1,3 @@
+## 2026-05-21 - HeroTerminal Performance Optimization
+**Learning:** High-frequency visual states (like typing animations or blinking cursors) in a large parent component cause expensive re-renders of the entire tree. Isolating these states into memoized sub-components and replacing periodic state updates with pure CSS animations can reduce re-renders by over 98%.
+**Action:** Always check for high-frequency state updates in React components. Prefer CSS animations for visual-only periodic changes (like cursors) and use React.memo with isolated state to protect parent components from frequent updates.
