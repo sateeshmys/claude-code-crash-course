@@ -1,0 +1,3 @@
+## 2026-05-21 - HeroTerminal Re-render Optimization
+**Learning:** High-frequency visual states (like a blinking cursor or typing animation) in a large React component can cause excessive re-renders of the entire subtree. Using CSS for simple animations and isolating stateful logic into memoized sub-components can drastically improve performance without sacrificing functionality. In this case, `HeroTerminal` renders dropped by ~98%.
+**Action:** Always check for high-frequency `useState` updates in Client Components. Isolate them into small, memoized components or replace with pure CSS animations where possible.
