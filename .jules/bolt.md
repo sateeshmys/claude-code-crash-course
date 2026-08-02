@@ -1,0 +1,3 @@
+## 2025-12-25 - React Component State Colocation and CSS Keyframes
+**Learning:** High-frequency visual state updates, such as typing animations and cursor blinking, trigger complete parent re-renders when defined in the top-level page components. Moving typing states to a dedicated colocated sub-component and offloading the blinking cursor to pure CSS keyframes (`@keyframes` + `step-end`) reduces page re-renders from ~98 down to just 2 (initial mount & hydration) over a 10-second window.
+**Action:** Always isolate interactive animations and transient visual states into lightweight, state-isolated sub-components, and prefer pure CSS transitions/keyframes over React-driven intervals for continuous visual states (like cursors and pulses).
