@@ -1,0 +1,3 @@
+## 2025-05-15 - React Terminal Re-render Isolation
+**Learning:** High-frequency visual states like standard cursor blinking and text typing animations should be decoupled from parent components with static sections. The blinking cursor is best handled using native CSS keyframes (`step-end`), eliminating state changes completely, while typing states should be isolated in isolated sub-components so that parent UI sections don't undergo redundant re-render cycles.
+**Action:** Move cursor animations to pure CSS, isolate high-frequency typing/visual states into highly encapsulated leaf-level components, and move static array declarations out of component function scopes.

@@ -1,0 +1,15 @@
+
+> hookhub@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 1934ms
+ ○ Compiling / ...
+ ✓ Compiled / in 9.2s (573 modules)
+[HeroTerminal] Rendered
+[TerminalMockup] Rendered
+ GET / 200 in 11137ms
