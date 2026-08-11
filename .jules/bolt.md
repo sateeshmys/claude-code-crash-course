@@ -1,0 +1,5 @@
+# Bolt's Journal - HookHub Performance Optimization
+
+## 2025-05-15 - React Render Optimization and State Isolation
+**Learning:** High-frequency UI changes, such as terminal cursor blinking and sequential text typing animation, can cause catastrophic parent re-render cycles if implemented directly within large parent components (like `HeroTerminal`). Triggering re-renders every 100ms for typing or 530ms for blinking causes the entire hero layout (headings, badges, buttons, stats) to unnecessarily re-evaluate and re-render. Isolating high-frequency visual states into a dedicated sub-component (`TerminalMockup`) prevents parent re-renders. Furthermore, replacing `useState` with hardware-accelerated pure CSS animation for the blinking cursor completely eliminates periodic React state cycles for passive visual elements.
+**Action:** Isolate typing animation and terminal state into a localized `TerminalMockup` component. Use CSS keyframe animations with `step-end` timing for blinking cursors to ensure zero React overhead. Always clear scheduled interval and timeout references during component unmount cleanup in `useEffect` to prevent memory leaks.
