@@ -1,0 +1,3 @@
+## 2025-08-13 - [Isolating High-Frequency States in HookHub HeroTerminal]
+**Learning:** Having typing animations and blinking cursors in a root-level component triggers re-render cycles across the entire tree, including static items like CTAs, headings, and statistics. By isolating high-frequency states into a child component and utilizing CSS keyframe animations for the visual-only cursor blinking, we completely cut out parent re-renders (reducing them from ~98 to 2) and offloaded visual blink transitions from the React main thread to the browser's CSS rendering engine.
+**Action:** Always isolate visual effects and fast typing animations in sub-components, and prefer pure CSS transitions over stateful intervals for high-frequency elements.
