@@ -35,6 +35,14 @@ Here are the topics currently available:
 
 *More topics might be added, so keep an eye out!*
 
+## Bundled Agent Skill 🎨
+
+This repo ships the [Taste Skill](https://github.com/leonxlnx/taste-skill) (MIT
+licensed) as a project skill at `.claude/skills/taste-skill/`. It's an
+anti-slop frontend design skill that helps Claude Code produce distinctive,
+well-considered UI instead of generic AI-default layouts. It loads
+automatically for anyone working in this repo with Claude Code.
+
 ## Prerequisites 🛠️
 
 Before you start, make sure you have the following installed:
