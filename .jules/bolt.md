@@ -1,0 +1,3 @@
+## 2025-05-18 - Hero Terminal Re-render Optimization
+**Learning:** High-frequency timer intervals for visual effects (like typing text or blinking terminal cursors) in component trees trigger unnecessary re-renders of surrounding static content. Separating state via sub-component colocation (`TerminalMockup`) and replacing React timer state with pure CSS keyframe animations (`animate-blink`) completely stops parent re-renders and eliminates infinite cursor blink re-renders.
+**Action:** Always isolate visual animation state into dedicated child sub-components, and prefer CSS `@keyframes` animations over `useState` + `setInterval` for constant periodic UI blinks/pulses.
