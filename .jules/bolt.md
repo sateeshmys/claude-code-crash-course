@@ -1,0 +1,3 @@
+## 2025-05-18 - Replacing JS Cursor Interval with CSS Keyframe and State Colocation
+**Learning:** Having component-wide React `useState` for frequent UI updates (like cursor blinking every 530ms) triggers whole-component re-renders including static UI blocks (headlines, badges, stats). Replacing JS intervals with CSS keyframes (`animate-blink`) eliminates unnecessary JS state transitions, and colocating typing state into a child sub-component isolates re-renders to only the terminal UI.
+**Action:** When working with high-frequency dynamic visual states (cursors, animations, typing simulators), move visual blinking to CSS keyframe animations and colocate state to the smallest possible sub-component.
