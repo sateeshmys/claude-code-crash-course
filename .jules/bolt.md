@@ -1,0 +1,3 @@
+## 2025-05-18 - Hero Terminal Re-render Optimization
+**Learning:** High-frequency state like typing animations and blinking cursors in React components cause unnecessary re-renders across the entire parent component tree if state is managed at the top component level. Isolating state to a sub-component (colocation) and delegating cursor blinking to CSS keyframe animations eliminates main-thread React re-renders for parent layout elements.
+**Action:** When creating animated components (terminals, typewriters, blinking indicators), isolate dynamic state into dedicated child components and use pure CSS animations for periodic visual state changes.
