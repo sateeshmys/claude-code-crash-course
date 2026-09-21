@@ -1,0 +1,3 @@
+## 2025-05-18 - HeroTerminal Re-render Optimization
+**Learning:** Replaced state-driven blinking cursor with pure CSS `@keyframes blink` animation and colocated typing state into a dedicated `TerminalMockup` sub-component. This eliminated high-frequency parent component re-renders (from ~98 renders down to 2 in a 10-second window) during terminal animations.
+**Action:** When working with simulated terminal or typing UI elements in React, always isolate the high-frequency typing state into a sub-component and use CSS keyframes (`step-end`) for blinking cursors instead of `setInterval` + `useState`.
