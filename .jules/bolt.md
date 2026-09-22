@@ -1,0 +1,5 @@
+## 2025-05-18 - Isolating Typing Animation State and Offloading Cursor Blinking to CSS
+
+**Learning:** Large hero components containing complex static layouts (headings, buttons, matrix background grids) often include interactive animated mockups (like terminal typewriters). Storing animation states like `typedText` or interval-driven cursor toggles (`showCursor`) directly in the root component forces the entire hero section—including all child SVG icons and layout elements—to re-render on every frame or state change. Offloading continuous visual blinking to pure CSS keyframe animations (`@keyframes blink`) eliminates continuous JS timer execution, while isolating state into dedicated sub-components (`TerminalMockup`) keeps parent layout re-render counts at zero after initial mount.
+
+**Action:** When adding interactive typing or animated visual states in React components, always extract the animated widget into a self-contained sub-component and replace JavaScript-based visual timer intervals with pure CSS animations whenever possible.
