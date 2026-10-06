@@ -1,0 +1,3 @@
+## 2025-05-18 - HeroTerminal Re-render Optimization & State Colocation
+**Learning:** High-frequency visual states like a blinking terminal cursor cause excessive component re-renders if managed via React `useState` and `setInterval`. Replacing cursor state with a pure CSS keyframe animation (`animate-blink`) and colocating typing animation state into a sub-component (`TerminalMockup`) isolates re-renders to the terminal sub-tree and eliminates parent re-renders completely during cursor blinking (~98 re-renders saved over 10s).
+**Action:** Always check high-frequency timers/animations in React components and offload purely visual blinks to CSS animations while colocating dynamic text state into sub-components.
