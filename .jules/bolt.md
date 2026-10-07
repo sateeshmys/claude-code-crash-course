@@ -1,0 +1,3 @@
+## 2025-05-18 - Isolated High-Frequency Terminal State & CSS Keyframe Blink
+**Learning:** In Next.js client components featuring animated mockups (like `HeroTerminal`), holding high-frequency timer state (`typedText`, `showCursor`) at the root component level forces unnecessary re-renders of the entire hero section layout (headlines, CTA buttons, matrix backgrounds, and stats grid) on every interval tick. Furthermore, managing blinking cursor states via React `useState` and `setInterval` creates infinite ongoing re-renders every 500ms even after typing finishes.
+**Action:** Isolate high-frequency visual states into dedicated child components (`TerminalMockup`) and replace JS-driven blinking states with pure CSS keyframe animations (`animate-blink`).
