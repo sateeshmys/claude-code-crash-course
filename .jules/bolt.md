@@ -1,0 +1,3 @@
+## 2025-05-18 - Hero Terminal Re-render & State Colocation Optimization
+**Learning:** High-frequency visual states like blinking terminal cursors driven by React `useState` and `setInterval` trigger continuous component re-renders (every 530ms indefinitely). Additionally, placing typing animation state (`typedText`, `showOutput`) at the top-level hero section forces non-interactive parent elements (hero copy, CTAs, badges, stats grid) to re-render on every typed character.
+**Action:** Replace JS cursor blink state with a CSS keyframe animation (`animate-blink` with `step-end`) in `globals.css`. Colocate animation states into dedicated sub-components (e.g., `TerminalMockup`), isolating state updates so parent layout components remain completely unaffected.
