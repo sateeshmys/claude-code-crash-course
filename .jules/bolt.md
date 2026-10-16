@@ -1,0 +1,3 @@
+## 2025-05-18 - HeroTerminal State Colocation and CSS Cursor Blink Optimization
+**Learning:** High-frequency state updates in React components (such as a 100ms typing animation timer and a 530ms blink toggle interval) cause continuous full-component re-renders across the entire Hero section. Isolating the typing animation into a dedicated sub-component (`TerminalMockup`) prevents parent re-renders, while replacing the JavaScript cursor blink timer with a CSS `@keyframes` animation eliminates state updates entirely for cursor blinking.
+**Action:** Always colocate rapid visual animation state inside dedicated sub-components and leverage CSS keyframes for regular toggle/blink states to minimize React DOM diffing overhead.
