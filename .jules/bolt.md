@@ -1,0 +1,3 @@
+## 2025-05-18 - Hero Terminal Typing & Cursor Re-render Optimization
+**Learning:** High-frequency state updates in React client components (like typing animation intervals or blinking cursor timers) cause re-renders of the entire parent component tree if state isn't colocated or offloaded to CSS. Offloading cursor blinking to pure CSS animations (`@keyframes blink`) eliminates unnecessary React timers, while moving typing state to an isolated sub-component (`TerminalMockup`) prevents parent section re-renders.
+**Action:** Isolate high-frequency visual states into leaf sub-components or CSS animations to protect parent components from continuous re-render cycles.
