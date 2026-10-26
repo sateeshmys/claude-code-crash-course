@@ -1,0 +1,3 @@
+## 2025-05-15 - Isolating React Typing Animation State and CSS Blink Cursor
+**Learning:** High-frequency state updates in React (such as typing intervals every 100ms and cursor blink timers every 530ms) cause continuous re-rendering of entire parent components containing static hero text, layout, and CTA elements. Replacing the cursor's `useState` toggle with a pure CSS keyframe animation (`.animate-blink`) and colocating typing state inside a dedicated sub-component (`TerminalMockup`) reduces parent re-renders to zero during animation loops.
+**Action:** Always isolate animated typing/cursor state into dedicated child sub-components and use pure CSS animations for repeating UI states like blinking cursors.
